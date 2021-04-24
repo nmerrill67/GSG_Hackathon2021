@@ -4,6 +4,10 @@ from argparse import ArgumentParser
 import praw
 import json
 import datetime
+import csv
+import time
+filename = 'CryptoCurrency_Reddit042421.csv'
+start = time.time()
 
 if __name__ == '__main__':
 
@@ -31,13 +35,24 @@ if __name__ == '__main__':
         client_secret=data['SECRET'],
     )
 
-    hot_posts = reddit.subreddit('CryptoCurrency').hot(limit=2000)
-    i = 0
-    for post in hot_posts:
+    with open(filename, mode='w') as cryoto_file:
+        cryoto_writer = csv.writer(cryoto_file, delimiter=',', quoting=csv.QUOTE_MINIMAL)
+
+        hot_posts = reddit.subreddit('CryptoCurrency').hot(limit=1000)
+        i = 0
+        for post in hot_posts:
         #print(post.title)
         #print("Attrs:")
-        #for attr in dir(post):
+        # for attr in dir(post):
         #    print(attr)
-        print(datetime.datetime.fromtimestamp(post.created_utc))
-        i += 1
+            i += 1
+            post_time = datetime.datetime.fromtimestamp(post.created_utc)
+            utc = post.created_utc
+            text = post.title
+            num_comments = post.num_comments
+            upvote_ratio = post.upvote_ratio
+            cryoto_writer.writerow([utc, post_time, num_comments, upvote_ratio, text])
+
     print("Number of posts:", i)
+
+print("TIME SPENT: "+ str(time.time()-start))
