@@ -34,10 +34,15 @@ if __name__ == '__main__':
     hot_posts = reddit.subreddit('CryptoCurrency').hot(limit=2000)
     i = 0
     for post in hot_posts:
-        #print(post.title)
+        #help(post)
+        #break
         #print("Attrs:")
         #for attr in dir(post):
-        #    print(attr)
-        print(datetime.datetime.fromtimestamp(post.created_utc))
+        #    print(attr) #, getattr(post,attr))
+        print(post.upvote_ratio)
+        #print(post.title)
+        #print(post.num_comments)
+        #print(post.view_count)
+        #print(datetime.datetime.fromtimestamp(post.created_utc))
         i += 1
     print("Number of posts:", i)
