@@ -93,6 +93,7 @@ if __name__ == '__main__':
     plt.legend()
     locs, labels = plt.xticks()
     labels = btc_usd["str_time"]
+    print(f"Read in {len(labels)} BTC market entries")
     plt.xticks([locs[0], locs[len(locs)//2], locs[-1]],
                [labels[0], labels[len(labels)//2], labels[-1]])
 
