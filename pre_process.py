@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from textblob import TextBlob
 import pandas as pd
 import string
@@ -6,14 +7,14 @@ from nltk.tokenize import word_tokenize
 import re
 # install textblob https://textblob.readthedocs.io/en/dev/install.html
 
-# input_file = 'CryptoCurrency_Reddit042421_9pm_BTC.csv'
-# output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_BTC.csv'
+# input_file = 'data/reddit_data/CryptoCurrency_Reddit042421_9pm_BTC.csv'
+# output_file = 'data/reddit_data/Cleaned_CryptoCurrency_Reddit042421_9pm_BTC.csv'
 
-# input_file = 'CryptoCurrency_Reddit042421_9pm_ETH.csv'
-# output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_ETH.csv'
+# input_file = 'data/reddit_data/CryptoCurrency_Reddit042421_9pm_ETH.csv'
+# output_file = 'data/reddit_data/Cleaned_CryptoCurrency_Reddit042421_9pm_ETH.csv'
 
-input_file = 'CryptoCurrency_Reddit042421_9pm_DOGE.csv'
-output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_DOGE.csv'
+input_file = 'data/reddit_data/CryptoCurrency_Reddit042421_9pm_DOGE.csv'
+output_file = 'data/reddit_data/Cleaned_CryptoCurrency_Reddit042421_9pm_DOGE.csv'
 
 md = pd.read_csv(input_file)
 emoji_pattern = re.compile("["u"\U000000A0-\U0001FA90""]+", flags=re.UNICODE)

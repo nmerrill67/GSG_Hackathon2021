@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 # Read a csv downloaded from here https://www.cryptodatadownload.com/data
 # If  not in USD or USDT, provide btc_to_usd which is the return of this 
