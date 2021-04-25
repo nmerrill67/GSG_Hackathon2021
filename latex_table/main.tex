@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\usepackage[skip=2pt,font=footnotesize]{caption} % nice table captions
+\usepackage{upgreek,bm}
+\usepackage{amsmath, amssymb, amsfonts}
+\DeclareMathSymbol{\shortminus}{\mathbin}{AMSa}{"39}
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\usepackage{subcaption}
+% \usepackage{todonotes}
+\usepackage{booktabs} % for \toprule tables
+\usepackage{float} % allow using of [H] tag on "figure"s
+\usepackage{color} % color text package
+\usepackage[super]{nth}
+\usepackage{stmaryrd} % short right arrow command
+\setcounter{MaxMatrixCols}{20} % solves the max column limit problem
+\allowdisplaybreaks
+\newcommand\scalemath[2]{\scalebox{#1}{\mbox{\ensuremath{\displaystyle #2}}}} % New command for decreasing the size of equations
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\DeclareMathOperator*{\argmin}{arg\,min} % Jan Hlavacek
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{proposition}{Proposition}
+\usepackage{todonotes}
+\usepackage{multirow}
+
+
+\newcommand{\bl}[1]{\color{blue}{\bf{#1}}}
+\newcommand{\gr}[1]{\color{green!75!magenta}{\bf{#1}}}
+
+
+\begin{document}
+
+\begin{table}
+	\centering
+	\caption{
+        Testing accuracy (between 0 and 1, higher is better) of 
+        the models on the data from different cryptocurrencies.
+        Trivial accuracy is the accuracy of always choosing that the market will rise,
+        which is not useful in practice.
+	}
+    \begin{tabular}{ccc} \toprule
+       Coin & Test Acc. & Trivial Acc. \\
+    \midrule
+        BTC & \bf{0.714} &  0.644 \\
+        DOGE & \bf{0.714} & 0.617 \\
+       ETH & \bf{0.657} & 0.513 \\
+    \bottomrule
+    \end{tabular}
+    \vspace{-15pt}
+\end{table}
+
+
+\end{document}
