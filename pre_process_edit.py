@@ -28,6 +28,16 @@ output_file = 'data/reddit_data/Cleaned_CryptoCurrency_Reddit042421_9pm_BTC.csv'
 # # output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_DOGE_w_spam_feature.csv'
 
 
+input_file = 'CryptoCurrency_Reddit042421_9pm_BTC.csv'
+output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_BTC_w_spam_feature.csv'
+
+# input_file = 'CryptoCurrency_Reddit042421_9pm_ETH.csv'
+# output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_ETH_w_spam_feature.csv'
+
+# input_file = 'CryptoCurrency_Reddit042421_9pm_DOGE.csv'
+# output_file = 'Cleaned_CryptoCurrency_Reddit042421_9pm_DOGE_w_spam_feature.csv'
+
+
 md = pd.read_csv(input_file)
 emoji_pattern = re.compile("["u"\U000000A0-\U0001FA90""]+", flags=re.UNICODE)
 
